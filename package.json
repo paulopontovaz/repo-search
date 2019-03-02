@@ -3,21 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.9",
-    "@types/node": "11.9.6",
-    "@types/react": "16.8.6",
-    "@types/react-dom": "16.8.2",
-    "@types/react-redux": "^7.0.1",
     "axios": "^0.18.0",
+    "github-pagination": "^0.1.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
+    "react-debounce-input": "^3.2.0",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.5",
     "react-thunk": "^1.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "typescript": "3.3.3333"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,11 +29,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.10.0",
-    "jest": "^24.1.0",
-    "jest-enzyme": "^7.0.1"
-  }
+  ]
 }
