@@ -1,0 +1,8 @@
+enum ActionTypesEnum {
+    GET_REPOS_REQUEST = 'GET_REPOS_REQUEST',
+    GET_REPOS_SUCCESS = 'GET_REPOS_SUCCESS',
+    GET_REPOS_FAILURE = 'GET_REPOS_FAILURE',
+    GET_SELECTED_REPO = 'GET_SELECTED_REPO',
+}
+
+export default ActionTypesEnum;
