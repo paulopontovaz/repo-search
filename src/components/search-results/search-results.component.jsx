@@ -8,7 +8,7 @@ class SearchResults extends Component {
     const { repos, search, isFetching } = this.props;
 
     return (
-      <div className='d-flex flex-column mt-3'>
+      <div data-test="search-results" className='d-flex flex-column mt-3'>
         {(!search || !search.itemsCount) && (
           <div>
             <span>No results available. Did you use the correct keywords?</span>

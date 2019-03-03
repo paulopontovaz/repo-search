@@ -12,7 +12,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className='app-header'>
+      <div data-test="app-header" className='app-header'>
         <h3>
           <i className="fab fa-github-alt" />
           <span>Repo Search</span>
