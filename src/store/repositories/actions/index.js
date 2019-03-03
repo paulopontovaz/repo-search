@@ -19,9 +19,9 @@ const createFetchReposFailureAction =
     });
 
 const createUpdateSearchInfoAction =
-  (navigation) => ({
+  (searchInfo) => ({
     type: ACTION_TYPES.UPDATE_SEARCH_INFO,
-    payload: navigation,
+    payload: searchInfo,
   });
 
 export const fetchRepos = (query, page) =>
