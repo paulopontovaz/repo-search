@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import ACTION_TYPES from "../actions/action-types.enum";
 
-const searchInitialState = {
+export const searchInitialState = {
   pagination: {
     current: null,
     next: null,
