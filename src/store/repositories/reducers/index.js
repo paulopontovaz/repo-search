@@ -7,6 +7,7 @@ const searchInitialState = {
     next: null,
     last: null,
     prev: null,
+    first: null,
   },
   itemsCount: null,
   query: '',

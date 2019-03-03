@@ -8,7 +8,7 @@ const PageTurnerButton = ({ clickFunction, active, disabled, children }) => (
   </li>
 );
 
-class PageTurner extends Component {
+export class PageTurner extends Component {
   selectPage = (page) => {
     const { query, getRepos, pagination } = this.props;
 
@@ -35,25 +35,43 @@ class PageTurner extends Component {
       pageNumbers.push(i);
 
     return (
-      <nav className='col-12 d-flex justify-content-center mt-3'>
+      <nav data-test="page-turner" className='col-12 d-flex justify-content-center mt-3'>
         <ul className="pagination">
-          <PageTurnerButton clickFunction={() => this.selectPage(1)} disabled={!pagination.prev}>
+          <PageTurnerButton
+            clickFunction={() => this.selectPage(pagination.first)}
+            disabled={!pagination.first}
+            data-test="page-selector-first"
+          >
             <i className="fas fa-angle-double-left"/>
           </PageTurnerButton>
-          <PageTurnerButton clickFunction={() => this.selectPage(pagination.prev)} disabled={!pagination.prev}>
+          <PageTurnerButton
+            clickFunction={() => this.selectPage(pagination.prev)}
+            disabled={!pagination.prev}
+            data-test="page-selector-previous"
+          >
             <i className="fas fa-chevron-left"/>
           </PageTurnerButton>
+
           {pageNumbers && pageNumbers.map((num) => (
             <PageTurnerButton
+              data-test="numbered-page-selector"
               active={num === currentPage}
               key={num}
               clickFunction={() => this.selectPage(num)}>{num}</PageTurnerButton>
           ))}
 
-          <PageTurnerButton clickFunction={() => this.selectPage(pagination.next)} disabled={!pagination.next}>
+          <PageTurnerButton
+            clickFunction={() => this.selectPage(pagination.next)}
+            disabled={!pagination.next}
+            data-test="page-selector-next"
+          >
             <i className="fas fa-chevron-right"/>
           </PageTurnerButton>
-          <PageTurnerButton clickFunction={() => this.selectPage(pagination.last)} disabled={!pagination.last}>
+          <PageTurnerButton
+            clickFunction={() => this.selectPage(pagination.last)}
+            disabled={!pagination.last}
+            data-test="page-selector-last"
+          >
             <i className="fas fa-angle-double-right"/>
           </PageTurnerButton>
         </ul>
