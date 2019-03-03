@@ -21,7 +21,7 @@ export class Header extends React.Component {
             data-test="search-box"
             placeholder="Type a repo name here"
             className='form-control form-control-lg'
-            debounceTimeout={500}
+            debounceTimeout={300}
             onChange={(event) => this.handleSearchTextChange(event.target.value)}
             id="search-text-input"
           />

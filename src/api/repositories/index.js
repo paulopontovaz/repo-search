@@ -4,6 +4,16 @@ import Repository from "../../models/Repository";
 import Octopage from 'github-pagination';
 
 export const getRepos = async (searchParams) => {
+  if (!searchParams.query)
+    return Promise.resolve({
+      repos: [],
+      search: {
+        pagination: {},
+        itemsCount: 0,
+        query: '',
+      },
+    });
+
   const base = `/${SEARCH_TYPES.REPOSITORIES}`;
   const queryArr = [
     `q=${searchParams.query.split(' ').join('+')}`,
@@ -19,10 +29,9 @@ export const getRepos = async (searchParams) => {
           (repo) => new Repository(repo, repo.owner)
       ),
       search: {
-        pagination: {
-          ...Octopage.parser(response.headers.link),
-          current: searchParams.page,
-        },
+        pagination: response.headers.link
+          ? { ...Octopage.parser(response.headers.link), current: searchParams.page }
+          : {},
         itemsCount: response.data.total_count,
         query: searchParams.query,
       },
