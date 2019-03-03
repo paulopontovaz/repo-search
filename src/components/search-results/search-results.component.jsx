@@ -11,7 +11,8 @@ class SearchResults extends Component {
       <div data-test="search-results" className='d-flex flex-column mt-3'>
         {(!search || !search.itemsCount) && (
           <div>
-            <span>No results available. Did you use the correct keywords?</span>
+            <h4><strong>No results available</strong></h4>
+            <span className="text-muted">Did you type anything in the box above yet? Try 'tetris' :)</span>
           </div>
         )}
 
@@ -39,18 +40,10 @@ const mapStateToProps = ({
   repos,
   loading,
   search,
-}) => {
-  return {
-    repos,
-    isFetching: loading.isFetching,
-    search,
-  };
-};
-
-//   ({
-//   repos,
-//   isFetching: loading.isFetching,
-//   search,
-// });
+}) => ({
+  repos,
+  isFetching: loading.isFetching,
+  search,
+});
 
 export default connect(mapStateToProps)(SearchResults);

@@ -32,7 +32,7 @@ const repo = new Repository({
 test('renders without crashing', () => {
   const wrapper = setup({ repo });
   const resultItem = findByTestAttr(wrapper, "result-item");
-  expect(resultItem.length).toBe(1)
+  expect(resultItem.length).toBe(1);
 });
 
 test('renders repository name and shows the correct values', () => {

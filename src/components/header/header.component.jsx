@@ -4,8 +4,7 @@ import { DebounceInput } from 'react-debounce-input';
 import { connect } from "react-redux";
 import { fetchRepos } from '../../store/repositories/actions';
 
-class Header extends React.Component {
-
+export class Header extends React.Component {
   handleSearchTextChange(query) {
     this.props.getRepos(query, 1);
   }
@@ -19,11 +18,13 @@ class Header extends React.Component {
         </h3>
         <div id='search-bar'>
           <DebounceInput
-            placeholder="Type your keywords, oh Wise One!"
+            data-test="search-box"
+            placeholder="Type a repo name here"
             className='form-control form-control-lg'
             debounceTimeout={500}
             onChange={(event) => this.handleSearchTextChange(event.target.value)}
-            id="search-text-input" />
+            id="search-text-input"
+          />
         </div>
       </div>
     );
