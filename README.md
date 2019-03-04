@@ -8,4 +8,5 @@ To install the app:
 - Run `npm install` or `yarn install`;
 - Wait until it finishes running;
 - Run `npm start` to run the app in development mode (open the app in your browser with [this link](http://localhost:3000));
+- Run `npm run test` to start testing the app;
 - Run `npm run build` to build the app;
