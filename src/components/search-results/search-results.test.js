@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
-import { findByTestAttr } from '../../utils/test';
+import { findByTestAttr } from '../../utils/test-helper';
 import { SearchResults } from './search-results.component';
 import { getRepos } from '../../api/repositories';
 import RepositorySearchParams from "../../models/RepositorySearchParams";
